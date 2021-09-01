@@ -1,0 +1,13 @@
+---
+syntax: bash
+tags: [maven, central, ossrh, deploy, gpg]
+---
+
+# for deploying to maven central (ossrh) get key id from list (e.g. rsa4096/AB1CDEF2GE3H4I5):
+gpg --list-secret-keys --keyid-format LONG
+
+# send key to keyservers
+gpg --keyserver hkp://keyserver.ubuntu.com --send-keys AB1CDEF2GE3H4I5
+gpg --keyserver hkps://keyserver.ubuntu.com --send-keys AB1CDEF2GE3H4I5
+gpg --keyserver hkp://keys.openpgp.org/ --send-keys AB1CDEF2GE3H4I5
+gpg --keyserver hkps://keys.openpgp.org/ --send-keys AB1CDEF2GE3H4I5

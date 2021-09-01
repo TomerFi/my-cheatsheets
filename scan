@@ -1,8 +1,8 @@
 ---
-tags: [ scan, scanner, sane, xerox ]
+tags: [scan, scanner, sane, xerox]
 ---
 
-# add xerox workcentre 3025 to sane's configuration
+# add xerox workcentre 3025 to sane's configuration on fedora
 # in /etc/sane.d/xerox_mfp.conf add the following two lines:
 
 #Xerox WorkCentre 3025

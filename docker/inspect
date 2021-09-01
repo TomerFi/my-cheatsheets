@@ -1,0 +1,15 @@
+
+---
+syntax: bash
+tags: [docker, inspect, example, troubleshooting]
+---
+
+# various docker inspect commands examples
+
+docker inspect \
+    -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
+    my_container
+
+docker network inspect \
+    $(docker network ls --filter driver=bridge --quiet) \
+    -f '{{range .IPAM.Config}}{{json .Subnet}}{{end}}'

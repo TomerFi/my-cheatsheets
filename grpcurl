@@ -1,0 +1,16 @@
+---
+syntax: bash
+tags: [grpc, grpcurl, example]
+---
+
+# discover all public services on remote server
+grpcurl -plaintext 192.168.224.1:8369 list
+
+# invoke DoSomthing rpc as plaintext
+# with '{"key": ["val1", "val2"]}' json body
+# exposed by com.example.services.v1.RequestService service
+# hosted on 192.168.224.1:8369
+grpcurl -plaintext \
+    -d '{\"key\": [\"val1\",\"val2\"]}' \
+    192.168.224.1:8369 \
+    com.example.services.v1.MyService/DoSomthing

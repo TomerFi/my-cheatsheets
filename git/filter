@@ -1,0 +1,19 @@
+---
+syntax: bash
+tags: [git, filter, example]
+---
+
+# add global clean filter named 'redactSecretKey' to run on
+# staging and replace 'my-secret-key' with '<Key-Redacted>'
+git config --global \
+    filter.redactSecretKey.clean \
+    'sed "s/my-secret-key/<Key-Redacted>/"'
+
+# add global smudge filter named 'redactSecretKey' to run on
+# checkout and replace '<Key-Redacted>' with 'my-secret-key'
+git config --global \
+    filter.redactSecretKey.smudge \
+    'sed "s/<Key-Redacted>/my-secret-key/"'
+
+# configure the filter named 'redactSecretKey' as required
+git config --global --bool filter.redactSecretKey.required true

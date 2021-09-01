@@ -1,0 +1,25 @@
+---
+syntax: bash
+tags: [docker, run, example]
+---
+
+# various docker run commands examples
+
+docker run --rm -it \
+    -v "${PWD}:/docs:ro" \
+    -w /docs \
+    jdkato/vale:latest \
+    --sort --config /.vale.ini $(cat .valerc)
+
+docker run --rm -v \
+    "${PWD}:/site:ro" \
+    18fgsa/html-proofer:latest \
+    --empty-alt-ignore --check-favicon \
+    --check-img-http --enforce-https \
+    --only-4xx --file-ignore "/node_modules/" /site
+
+docker run --rm -i \
+    -v ${PWD}:/usr/src/mymaven \
+    -v ${HOME}/.m2:/root/.m2  \
+    -w /usr/src/mymaven \
+    maven:3.8.1-jdk-11 mvn verify
