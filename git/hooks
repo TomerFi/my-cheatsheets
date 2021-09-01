@@ -1,0 +1,11 @@
+---
+syntax: bash
+tags: [git, hooks, commit-msg, commitlint]
+---
+
+# to enforce conventional commits on repo
+# first install commitlint.js.org
+# add a .git/hooks/commit-msg hook with the following lines:
+
+#!/bin/sh
+command commitlint -e
