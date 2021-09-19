@@ -1,0 +1,7 @@
+---
+syntax: bash
+tags: [ssh, keygen]
+---
+
+# create private public ssh keys
+ssh-keygen -t ed25519 -C "your_email@example.com"
