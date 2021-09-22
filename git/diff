@@ -1,0 +1,8 @@
+---
+syntax: bash
+tags: [git, filter, example]
+---
+
+# view diff in commits between branches
+# note the < or > indicating in which branch this commit exists
+git log --left-right --graph --cherry-pick --oneline branchA...branchB
